@@ -16,6 +16,7 @@ for i in range(1,9):
   a = list(permutations(nums,i))
   for j in range(len(a)):
     print(a[j][0])
+    print(a[j][1])
   if i == 2:
     break
 
