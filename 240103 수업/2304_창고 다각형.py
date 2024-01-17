@@ -33,7 +33,6 @@ for i in arr:
     exit()
 
 
-
 # 가장 높은 기둥의 갯수
 # 가장 높은 기둥의 x좌표를 담을 arr
 highest_x = []
