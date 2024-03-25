@@ -4,7 +4,7 @@ input = sys.stdin.readline
 def dfs(cur,x,y):
   global cnt
 
-  visited[ord(arr[x][y])-65] = True
+  visited[arr[x][y]] = True
   cnt = max(cnt, cur)
 
   for i in range(4):
@@ -12,17 +12,17 @@ def dfs(cur,x,y):
     if not (0<= nx < n and 0 <= ny < m):
       continue
 
-    if visited[ord(arr[nx][ny])-65]:
+    if arr[nx][ny] in visited and visited[arr[nx][ny]]:
       continue
 
-    visited[ord(arr[nx][ny])-65] = True
     dfs(cur+1,nx,ny)
-    visited[ord(arr[nx][ny])-65] = False
+    visited[arr[nx][ny]] = False
+    
 
 n, m = map(int,input().split())
 arr = list(input().rstrip() for _ in range(n))
 
-visited = [False for _ in range(26)]
+visited = {}
 
 dx, dy = [-1,1,0,0],[0,0,-1,1]
 
