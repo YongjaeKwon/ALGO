@@ -15,6 +15,7 @@ def dfs(cur,x,y):
     if arr[nx][ny] in visited and visited[arr[nx][ny]]:
       continue
 
+    visited[arr[nx][ny]] = True
     dfs(cur+1,nx,ny)
     visited[arr[nx][ny]] = False
     
